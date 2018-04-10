@@ -18,12 +18,12 @@
 }
 
 @-webkit-keyframes fadein {
-from {
-opacity:0;
-}
-to {
-opacity:1;
-}
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
 }
 
 #slogan {
@@ -92,5 +92,9 @@ opacity:1;
 }
 
 img {
+  max-height: 400px;
+}
+
+video {
   max-height: 400px;
 }

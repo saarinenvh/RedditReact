@@ -7,15 +7,16 @@ import thunk from 'redux-thunk';
 import allReducers from './reducers';
 import App from './components/app';
 import * as fetchAll from './actions/fetch-posts';
-import * as createList from './actions/create-list'
 import './index.css'
 
 
 const store = createStore(allReducers,applyMiddleware(thunk));
 
+// Fetches all the date from destination url
 store.dispatch(fetchAll.fetchPosts())
-setInterval(function(){ store.dispatch(fetchAll.fetchPosts())}, 60000);
 
+// Updates the state every 60 seconds
+setInterval(function(){ store.dispatch(fetchAll.fetchPosts())}, 60000);
 
 ReactDOM.render(
   <Provider store={store}>

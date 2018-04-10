@@ -1,9 +1,11 @@
 
+// Switches the state of active post
+
 export default function (state=null,action){
   switch(action.type){
     case "POST_SELECTED":
       return action.payload;
-      break;
+    default:
+      return state;
   }
-  return state;
 }

@@ -4,28 +4,42 @@ import {bindActionCreators} from 'redux';
 import {selectPost} from '../actions/select-post'
 import {moveLeft, moveRight} from '../actions/arrow-click'
 
+// Post item list
 class PostList extends Component {
+
   createListItems() {
+
+    // List items that will show on page
     var items = this.props.posts.slice(0,5)
+
+    // If arr is empty, return dots
     if (!this.props.posts) {
       return <p>...</p>
+
   } else {
-    return items.map( (post) => {
-      return(
+
+    // Map each post item to html code
+    return items.map(
+      (post) => { return(
+
       <div className='postLink' key={post.data.id} onClick={() => this.props.selectPost(post)} >
-      <img src={post.data.thumbnail} alt={post.data.title}/>
+        <img id="thumbnail" alt="" src={post.data.thumbnail} />
       </div>
+
     )})
   }
 }
 
+  // Render a postList, contains all elements in the list
   render() {
     return (
+
       <div className = 'postList'>
-      <img id="arrow" src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Arrleft.svg" onClick={() => this.props.moveLeft(this.props.posts)} />
-      {this.createListItems()}
-      <img id="arrow" src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Arrright.svg" onClick={() => this.props.moveRight(this.props.posts)} />
+        <img id="arrow" alt = "Scroll left" src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Arrleft.svg" onClick={() => this.props.moveLeft(this.props.posts)} />
+        {this.createListItems()}
+        <img id="arrow" alt = "Scroll righ" src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Arrright.svg" onClick={() => this.props.moveRight(this.props.posts)} />
       </div>
+
     );
   }
 }
