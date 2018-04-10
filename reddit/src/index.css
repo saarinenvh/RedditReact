@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Kameron');
+
+body {
+  background-color: #212b4b;
+  margin: 0;
+  padding: 0;
+  max-width: 1920px;
+  max-height: 1080px;
+  font-family: 'Kameron', serif;
+}
