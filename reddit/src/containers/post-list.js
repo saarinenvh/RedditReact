@@ -10,7 +10,7 @@ class PostList extends Component {
   createListItems() {
 
     // List items that will show on page
-    var items = this.props.posts.slice(0,5)
+    var items = this.props.posts.slice(0,6)
 
     // If arr is empty, return dots
     if (!this.props.posts) {
@@ -23,7 +23,7 @@ class PostList extends Component {
       (post) => { return(
 
       <div className='postLink' key={post.data.id} onClick={() => this.props.selectPost(post)} >
-        <img id="thumbnail" alt="" src={post.data.thumbnail} />
+        <img id="thumbnail" alt={post.data.title} src={post.data.thumbnail} />
       </div>
 
     )})
