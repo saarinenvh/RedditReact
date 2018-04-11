@@ -51,6 +51,7 @@
 }
 
 .postList {
+  margin: 0 auto;
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: #333333;
@@ -68,8 +69,8 @@
 }
 
 .postLink img {
-  height: 120px;
-  width: 120px;
+  height: 100px;
+  width: 100px;
   -webkit-transition: all .2s ease-in-out;
   -moz-transition: all .2s ease-in-out;
   -o-transition: all .2s ease-in-out;
