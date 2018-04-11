@@ -1,4 +1,5 @@
 
+// selects posts after clicked
 export const selectPost = (post) => {
   console.log("You clicked on Post: ", post.data.url );
   return {
@@ -7,8 +8,8 @@ export const selectPost = (post) => {
   }
 };
 
+// action to rotate array to show posts
 export const nextPost = (posts) => {
-  console.log("AUTONEXT"+ posts )
   return {
     type: "NEXT_POST",
     posts: posts

@@ -1,4 +1,5 @@
 
+// action to move slider to left
 export const moveLeft = (posts) => {
   console.log(posts);
   return {
@@ -7,6 +8,7 @@ export const moveLeft = (posts) => {
   }
 };
 
+// action to move slider to right
 export const moveRight = (posts) => {
   console.log("You clicked on moveright");
   return {

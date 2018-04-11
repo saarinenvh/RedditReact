@@ -1,4 +1,5 @@
-// This reducer modifies all the post data
+
+// Moves the array five steps to left or right according to arrow that has been clicked
 
 export default(state = [], action) => {
 

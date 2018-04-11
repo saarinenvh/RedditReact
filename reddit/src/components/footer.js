@@ -5,7 +5,7 @@ class Header extends Component {
     return (
       <div className="footer">
         <div className="links">
-          <img alt="logo" id="bird" src = {require('../img/bird.png')} />
+          <img alt="logo" id="bird" src={require('../img/bird.png')} />
           <h1><a href="http://www.craneworks.fi">Craneworks</a></h1>
         </div>
       </div>

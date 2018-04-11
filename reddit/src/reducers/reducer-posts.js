@@ -1,4 +1,5 @@
-// This reducer modifies all the post data
+
+// Holds all the posts and changes order according to posts that needs to be shows
 
 export default(state = [], action) => {
 

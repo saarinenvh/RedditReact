@@ -1,5 +1,6 @@
 import Axios from 'axios'
 
+// url to fetch data
 const apiUrl = 'https://www.reddit.com/r/funny.json';
 
 export const fetchPostsSuccess = (posts) => {
@@ -10,6 +11,7 @@ export const fetchPostsSuccess = (posts) => {
 };
 
 export const fetchPosts = () => {
+
   // Returns a dispatcher function
   // that dispatches an action at a later time
   return (dispatch) => {
@@ -23,5 +25,5 @@ export const fetchPosts = () => {
       .catch(error => {
         throw(error);
       });
+    };
   };
-};

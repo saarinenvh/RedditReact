@@ -14,15 +14,15 @@ import './index.css'
 const store = createStore(allReducers,applyMiddleware(thunk));
 
 // Fetches all the date from destination url
-
-
 store.dispatch(fetchAll.fetchPosts())
 
 // Updates the state every 60 seconds
 setInterval(function(){ store.dispatch(fetchAll.fetchPosts())}, 60000);
 
-
+// Waits that logo item has shown 10s
 setTimeout(function(){ store.dispatch(nextPost.nextPost(store.getState().allPosts))}, 10000);
+
+// Updates active post every 10s
 setInterval(function(){ store.dispatch(nextPost.nextPost(store.getState().allPosts))}, 10000);
 
 
