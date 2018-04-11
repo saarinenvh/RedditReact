@@ -10,7 +10,7 @@ class PostList extends Component {
   createListItems() {
 
     // List items that will show on page
-    var items = this.props.posts.slice(0,6)
+    var items = this.props.posts.slice(0,5)
 
     // If arr is empty, return dots
     if (!this.props.posts) {
