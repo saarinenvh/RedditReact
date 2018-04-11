@@ -6,3 +6,11 @@ export const selectPost = (post) => {
     payload: post
   }
 };
+
+export const nextPost = (posts) => {
+  console.log("AUTONEXT"+ posts )
+  return {
+    type: "NEXT_POST",
+    posts: posts
+  }
+};

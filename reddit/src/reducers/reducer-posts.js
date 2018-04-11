@@ -8,24 +8,16 @@ export default(state = [], action) => {
 
       // Checks if the posts have changed
       if (action.posts.toString() !== state.toString()) {
-          return action.posts;
+        return action.posts;
+      } else {
+        return state;
       }
-      break;
 
-      // Changes the visible list to left by 5
-    case 'MOVE_LEFT':
-      var start = action.posts.slice(5, action.posts.length)
-      var end = action.posts.slice(0,5)
-      return start.concat(end)
-
-      // Changes the visible list to right by 5
-    case 'MOVE_RIGHT':
-      start = action.posts.slice(action.posts.length-5, action.posts.length)
-      end = action.posts.slice(0,action.posts.length-5)
-      return start.concat(end)
-
+      case 'NEXT_POST':
+          const start = action.posts.slice(1, action.posts.length)
+          const end = action.posts.slice(0,1)
+          return start.concat(end)
     default:
       return state;
     }
-    return state;
 };

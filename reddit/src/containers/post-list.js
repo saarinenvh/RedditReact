@@ -10,10 +10,10 @@ class PostList extends Component {
   createListItems() {
 
     // List items that will show on page
-    var items = this.props.posts.slice(0,5)
+    var items = this.props.slider.slice(0,5)
 
     // If arr is empty, return dots
-    if (!this.props.posts) {
+    if (!this.props.slider) {
       return <p>...</p>
 
   } else {
@@ -35,9 +35,9 @@ class PostList extends Component {
     return (
 
       <div className = 'postList'>
-        <img id="arrow" alt = "Scroll left" src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Arrleft.svg" onClick={() => this.props.moveLeft(this.props.posts)} />
+        <img id="arrow" alt = "Scroll left" src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Arrleft.svg" onClick={() => this.props.moveLeft(this.props.slider)} />
         {this.createListItems()}
-        <img id="arrow" alt = "Scroll righ" src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Arrright.svg" onClick={() => this.props.moveRight(this.props.posts)} />
+        <img id="arrow" alt = "Scroll righ" src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Arrright.svg" onClick={() => this.props.moveRight(this.props.slider)} />
       </div>
 
     );
@@ -47,7 +47,8 @@ class PostList extends Component {
 function mapStateToProps(state) {
   return {
     posts: state.allPosts,
-    list: state.list
+    list: state.list,
+    slider: state.slider
   }
 }
 

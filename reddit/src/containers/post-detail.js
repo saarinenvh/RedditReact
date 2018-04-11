@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
+
 class PostDetail extends Component {
 
   // Renders a logo, if no posts have been selected.
@@ -15,17 +16,18 @@ class PostDetail extends Component {
           <div className="logo">
             <img alt="logo" src={require('../img/cranelogo.png')} />
           </div>
-          <h2 id="slogan">Because you have to have some fun while working...</h2>
+          <p id="slogan">Because you have to have some fun while working...</p>
         </div>);
 
-    } else {
+    }
+    else {
 
       return (
         <div className="showPost">
             <h1 id="title">{this.props.post.data.title}</h1>
 
             <hr id = "dot"/>
-
+          <div className="content">
           {this.props.post.data.is_video &&
             <a href = {this.props.post.data.url}>
             <video controls autoPlay loop>
@@ -48,6 +50,7 @@ class PostDetail extends Component {
           {this.props.post.data.post_hint.includes("link") && this.props.post.data.url.slice(this.props.post.data.url.length - 3, this.props.post.data.url.length) !== "ifv" &&
             <a href = {this.props.post.data.url}><img alt = "thumbnail" src={this.props.post.data.thumbnail} /></a>
           }
+          </div>
           <hr id = "dot" />
           <h2 id="score">Score: {this.props.post.data.score}</h2>
       </div>
@@ -56,11 +59,13 @@ class PostDetail extends Component {
   }
 }
 
+
 function mapStateToProps(state) {
   return {
     post: state.activePost,
-    list: state.postList
+    posts: state.allPosts
   }
 }
+
 
 export default connect(mapStateToProps)(PostDetail);
